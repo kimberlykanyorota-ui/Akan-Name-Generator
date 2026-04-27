@@ -5,28 +5,29 @@ body {
 }
 
 
-.container {
-    background: white;
+.header{
+    background: rgb(131, 20, 20);
     padding: 20px;
-    margin: 50px auto;
-    width: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 50px auto;
+    color: white;
+    text-transform: capitalize;
 }
 
 input, select, button {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin: 10px 0;
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #248e19;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #13743f;
 }
