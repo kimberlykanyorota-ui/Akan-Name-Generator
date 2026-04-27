@@ -48,4 +48,6 @@ function calculate() {
   const gender = input.gender;
 
   // ... rest of your calculation logic
+  
 }
+
