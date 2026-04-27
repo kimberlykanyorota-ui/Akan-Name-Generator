@@ -1,4 +1,4 @@
-function getAkanName() {}
+
 switch (new Date().getDay()) {
   case 0:
     day = "Sunday";
@@ -21,6 +21,14 @@ switch (new Date().getDay()) {
   case 6:
     day = "Saturday";
 }
+function getAkanName() {
+    const names = {
+      male: ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"],
+      female: ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"],
+    };
+}
+
+ 
 
 const h1 = document.querySelector("h1");
 
