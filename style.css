@@ -1,62 +1,32 @@
-body{
+body {
     font-family: Arial, sans-serif;
-    background-color:black;
-    margin: 0;
-    padding: 20px;
-    color: white;
-    line-height: 1.6;
-}
-header{
-    background-color:brown;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 24px;
+    background-color: #f4f4f4;
     text-align: center;
 }
-header h1{
-    font-size: 40px;
-    margin: 0;
-    text-transform: uppercase;
-}
-#description{
-    max-width: 800px;
-    margin: 24px auto;
-    font-size: 18px;
-    text-align: center;
-}
-form{
-    max-width: 650px;
-    margin: 24px auto;
-}
-form label{
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-form input, form textarea, form button{
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 18px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
 
+
+.container {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-form button{
-    background-color: #22b53f;
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #007BFF;
     color: white;
-    font-size: 18px;
-    font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
-#result{
-    max-width: 800px;
-    margin: 24px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    text-align: center;
-    color: black;
+
+button:hover {
+    background-color: #0056b3;
 }
