@@ -1,0 +1,20 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color:black;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    line-height: 1.6;
+}
+header{
+    background-color:brown;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    text-align: center;
+}
+header h1{
+    font-size: 40px;
+    margin: 0;
+    text-transform: uppercase;
+}
