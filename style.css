@@ -18,3 +18,13 @@ header h1{
     margin: 0;
     text-transform: uppercase;
 }
+#description{
+    max-width: 800px;
+    margin: 24px auto;
+    font-size: 18px;
+    text-align: center;
+}
+form{
+    max-width: 650px;
+    margin: 24px auto;
+}
