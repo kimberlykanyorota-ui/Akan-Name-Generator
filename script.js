@@ -6,7 +6,7 @@
 
 // const gender = document.querySelector("#gender");
 
-// const button = document.querySelector("#submit-button");
+const button = document.querySelector("#submit-button");
 
 const result = document.querySelector("#result");
 
@@ -32,18 +32,23 @@ button.addEventListener("click", (event) => {
   let DD = dayValue;
 
   let dayOfWeek = calculateDayOfWeek(CC, YY, MM, DD);
+  console.log(dayOfWeek);
 
   let akanName = getAkanName(dayOfWeek, genderValue);
+  console.log(akanName);
   result.textContent = akanName;
 });
 
 
 
 function firstTwoDigits(year) {
+    console.log(year);
   return Math.floor(year / 100);
+  
 }
 
 function lastTwoDigits(year) {
+    console.log(year);
   return year % 100;
 }
 
@@ -52,12 +57,30 @@ function lastTwoDigits(year) {
 function calculateDayOfWeek(CC, YY, MM, DD) {
   let dayOfWeek =
     (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
+    console.log(dayOfWeek);
     // switch here
-    
-  return ;
-}
 
+ switch (Math.floor(dayOfWeek)) {
+  case 0:
+    return "Sunday"; break;
+  case 1:
+    return "Monday"; break;
+  case 2:
+    return "Tuesday"; break;
+  case 3:
+    return "Wednesday"; break
+  case 4:
+    return "Thursday"; break;
+  case 5:
+    return "Friday"; break;
+  case 6:
+    return "Saturday"; break;
+    default:"Invalid day of week"; break;
+
+}
+}
 function getAkanName(dayOfWeek, gender) {
+    console.log(dayOfWeek, gender);
   const maleNames = [
     "Kwasi",
     "Kwadwo",
@@ -78,6 +101,8 @@ function getAkanName(dayOfWeek, gender) {
   ];
 
   if (gender === "male") {
+    CON
+
     return maleNames[dayOfWeek];
   } else {
     return femaleNames[dayOfWeek];
