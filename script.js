@@ -13,15 +13,15 @@ const result = document.querySelector("#result");
 let day;
 let month;
 let year;
-let gender;
+let gender = "male";
 
 button.addEventListener("click", (event) => {
   // prevent form from refreshing the page
   event.preventDefault();
   // retrieve values from the form
-  const dayValue = document.querySelector("#day").value;
-  const monthValue = document.querySelector("#month").value;
-  const yearValue = document.querySelector("#year").value;
+  const dayValue = Number(document.querySelector("#day").value);
+  const monthValue = Number(document.querySelector("#month").value);
+  const yearValue = Number(document.querySelector("#year").value);
   const genderValue = document.querySelector("#gender").value;
 
   // here 31-38
@@ -32,23 +32,24 @@ button.addEventListener("click", (event) => {
   let DD = dayValue;
 
   let dayOfWeek = calculateDayOfWeek(CC, YY, MM, DD);
-  console.log(dayOfWeek);
+ 
 
   let akanName = getAkanName(dayOfWeek, genderValue);
-  console.log(akanName);
-  result.textContent = akanName;
+  
+  result.textContent = `Your Akan name is: ${akanName}`;
+ 
 });
 
 
 
 function firstTwoDigits(year) {
-    console.log(year);
+   
   return Math.floor(year / 100);
   
 }
 
 function lastTwoDigits(year) {
-    console.log(year);
+   
   return year % 100;
 }
 
@@ -57,7 +58,7 @@ function lastTwoDigits(year) {
 function calculateDayOfWeek(CC, YY, MM, DD) {
   let dayOfWeek =
     (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
-    console.log(dayOfWeek);
+    return Math.floor(dayOfWeek);
     // switch here
 
  switch (Math.floor(dayOfWeek)) {
@@ -76,11 +77,12 @@ function calculateDayOfWeek(CC, YY, MM, DD) {
   case 6:
     return "Saturday"; break;
     default:"Invalid day of week"; break;
+}
+
 
 }
-}
-function getAkanName(dayOfWeek, gender) {
-    console.log(dayOfWeek, gender);
+function getAkanName(dayOfWeek, genderValue) {
+    
   const maleNames = [
     "Kwasi",
     "Kwadwo",
@@ -100,9 +102,8 @@ function getAkanName(dayOfWeek, gender) {
     "Ama",
   ];
 
-  if (gender === "male") {
-    CON
-
+  if (genderValue === "male") {
+    
     return maleNames[dayOfWeek];
   } else {
     return femaleNames[dayOfWeek];
