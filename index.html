@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ <div class="container">
    <header class="header">
-    <div class="container">
+    
         <h1>Akan Name Generator</h1>
         <p>Enter your birthdate and gender to find your Akan name.</p>
-    </div>
+    
    </header>
 
         <form id="akanForm">
@@ -30,11 +31,11 @@
                 <option value="female">Female</option>
             </select><br>
 
-            <button type="submit">Generate Name</button>
+            <button type="submit" id="submit-button">Generate Name</button>
         </form>
-
-        <h2 id="result"></h2>
-    </div>
+        <!-- generated name -->
+        <h2 id="result">Akan name:</h2>
+ </div>
 
     <script src="script.js"></script>
 </body>

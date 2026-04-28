@@ -7,9 +7,10 @@ const year = document.querySelector("#year");
 const gender = document.querySelector("#gender");
 
 const button = document.querySelector("#submit-button");
-let fullName;
-let email;
-let message;
+let day;
+let month;
+let year;
+let gender;
 
 
 button.addEventListener("click",(event) => {
@@ -20,6 +21,7 @@ button.addEventListener("click",(event) => {
      monthValue = document.querySelector("#month").value;
      yearValue = document.querySelector("#year").value;
      genderValue = document.querySelector("#gender").value;
+     result.textContent = akanName;
 });
     // validate form inputs
     if (dayValue < 1 || dayValue > 31) {
@@ -58,6 +60,5 @@ button.addEventListener("click",(event) => {
     }
 
     document.getElementById("result").textContent =
-        "You were born on " + days[d] + ". Your Akan name is " + akanName + ".";
-
+        "Your Akan name is: " + akanName;
 
