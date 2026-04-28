@@ -2,7 +2,7 @@
 Akan Name generator
 It generates your Akan name based on your gender and day of birth
 By; Kimberly Kanyorota, Github; kimberlykanyorota-ui
-Setup GitHub repository and used VS Code
+Setup GitHub repository and used VS Code to edit website
 Feature: generate Akan name . Scenario: enter date of birth and gender
 Technologies used: Programming language; Javascript, Markup language; HTML, Styleup language; CSS
 Contact information: kimberlykanyorota-ui
