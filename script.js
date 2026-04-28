@@ -1,64 +1,85 @@
-const day = document.querySelector("#day");
+// const day = document.querySelector("#day");
 
-const month = document.querySelector("#month");
+// const month = document.querySelector("#month");
 
-const year = document.querySelector("#year");
+// const year = document.querySelector("#year");
 
-const gender = document.querySelector("#gender");
+// const gender = document.querySelector("#gender");
 
-const button = document.querySelector("#submit-button");
+// const button = document.querySelector("#submit-button");
+
+const result = document.querySelector("#result");
+
 let day;
 let month;
 let year;
 let gender;
 
+button.addEventListener("click", (event) => {
+  // prevent form from refreshing the page
+  event.preventDefault();
+  // retrieve values from the form
+  const dayValue = document.querySelector("#day").value;
+  const monthValue = document.querySelector("#month").value;
+  const yearValue = document.querySelector("#year").value;
+  const genderValue = document.querySelector("#gender").value;
 
-button.addEventListener("click",(event) => {
-    // prevent form from refreshing the page
-    event.preventDefault();
-    // retrieve values from the form
-     dayValue = document.querySelector("#day").value;
-     monthValue = document.querySelector("#month").value;
-     yearValue = document.querySelector("#year").value;
-     genderValue = document.querySelector("#gender").value;
-     result.textContent = akanName;
+  // here 31-38
+
+  let CC = firstTwoDigits(yearValue);
+  let YY = lastTwoDigits(yearValue);
+  let MM = monthValue;
+  let DD = dayValue;
+
+  let dayOfWeek = calculateDayOfWeek(CC, YY, MM, DD);
+
+  let akanName = getAkanName(dayOfWeek, genderValue);
+  result.textContent = akanName;
 });
-    // validate form inputs
-    if (dayValue < 1 || dayValue > 31) {
-        alert("Please enter a valid day (1-31).");
-        return;
-    }
-    if (monthValue < 1 || monthValue > 12) {
-        alert("Please enter a valid month (1-12).");
-        return;
-    }
-    if (gender === "") {
-        alert("Please select a gender");
-        return;
-    }
 
-    // Extract CC and YY
-    let CC = Math.floor(year / 100);
-    let YY = year % 100;
 
-    // Formula
-    let d = ((4 * CC - 2 * CC - 1) + (5 * YY) + (26 * (month + 1) / 10) + day) % 7;
-    d = Math.floor(d);
 
-    // Day names
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+function firstTwoDigits(year) {
+  return Math.floor(year / 100);
+}
 
-    let maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-    let femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+function lastTwoDigits(year) {
+  return year % 100;
+}
 
-    let akanName;
+// hoisting
 
-    if (gender === "male") {
-        akanName = maleNames[d];
-    } else {
-        akanName = femaleNames[d];
-    }
+function calculateDayOfWeek(CC, YY, MM, DD) {
+  let dayOfWeek =
+    (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7;
+    // switch here
+    
+  return ;
+}
 
-    document.getElementById("result").textContent =
-        "Your Akan name is: " + akanName;
+function getAkanName(dayOfWeek, gender) {
+  const maleNames = [
+    "Kwasi",
+    "Kwadwo",
+    "Kwabena",
+    "Kwaku",
+    "Yaw",
+    "Kofi",
+    "Kwame",
+  ];
+  const femaleNames = [
+    "Akosua",
+    "Adwoa",
+    "Abenaa",
+    "Akua",
+    "Yaa",
+    "Afua",
+    "Ama",
+  ];
 
+  if (gender === "male") {
+    return maleNames[dayOfWeek];
+  } else {
+    return femaleNames[dayOfWeek];
+  }
+}
