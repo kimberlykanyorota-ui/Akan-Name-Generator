@@ -129,7 +129,7 @@ function getAkanName(dayOfWeek, genderValue) {
     "Yaw",
     "Kofi",
     "Kwame",
-  ];
+  ];nm9
   const femaleNames = [
     "Akosua",
     "Adwoa",
